@@ -21,3 +21,5 @@ RUN a2enmod rewrite \
 	&& pecl install imagick && docker-php-ext-enable imagick \
 	&& pecl install redis-3.1.1 && docker-php-ext-enable redis \
 	&& docker-php-source delete
+
+RUN apt-get update && apt-get install -y ssmtp && rm -rf /var/lib/apt/lists/*
